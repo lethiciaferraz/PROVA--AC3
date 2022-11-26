@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROVA AC3</title>
+</head>
+
+<body>
+
+    <div id="div_exibir">
+        Jogador 1:<br>
+        Adversario:<br>
+    </div>
+
+    <button onclick="batalha()">Simular batalha</button> <br>
+    <img id="cartas1" src="" width=220px alt="">
+    <img id="cartas2" src="" width=220px alt="">
+    <img id="cartas3" src="" width=220px alt="">
+
+    <br><br>
+
+    <div id="div_baralho"></div>
+
+
+
+
+
+</body>
+
+</html>
+<script>
+
+    baralho = [
+        {
+            img: "./cartas/capitao_america.png",
+            forca: 3,
+            resistencia: 3
+        }, {
+            img: "./cartas/deadpool.png",
+            forca: 1,
+            resistencia: 1
+        }, {
+            img: "./cartas/homem_de_ferro.png",
+            forca: 5,
+            resistencia: 0
+        }, {
+            img: "./cartas/mercurio.png",
+            forca: 1,
+            resistencia: 2
+        }, {
+            img: "./cartas/mulher_invisivel.png",
+            forca: 2,
+            resistencia: 2
+        }, {
+            img: "./cartas/sr_fantastico.png"
+            ,
+            forca: [3],
+            resistencia: [2]
+        }, {
+            img: "./cartas/thor.png",
+            forca: 3,
+            resistencia: 4
+        }, {
+            img: "./cartas/venom.png"
+            ,
+            forca: 3,
+            resistencia: 1
+        }, {
+            img: "./cartas/viuva_negra.png"
+            ,
+            forca: 2,
+            resistencia: 1,
+        }, {
+            img: "./cartas/wolverine.png",
+            forca: 2,
+            resistencia: 3
+        }
+    ]
+
+    var jogador = 0
+    var adversario = 0
+
+    function batalha() {
+        var sorteio1 = parseInt(Math.random() * 10)
+        var sorteio2 = parseInt(Math.random() * 10)
+        var empate = sorteio1 == sorteio2
+
+        cartas1.src = baralho[sorteio1].img
+        cartas2.src = baralho[sorteio2].img
+
+
+        div_baralho.innerHTML = `BARALHO RESTANTE <br> <br> <img src="./cartas/capitao_america.png" width=220px alt="">
+        <img src="./cartas/deadpool.png" width=220px alt="">
+        <img src="./cartas/mercurio.png" width=220pxalt="">
+        <img src="./cartas/homem_de_ferro.png" width=220 pxalt="">
+        <img src="./cartas/sr_fantastico.png" width=220px alt="">
+        <img src="./cartas/mulher_invisivel.png"width=220px alt="">
+        <img src="./cartas/venom.png"width=220px alt="">
+        <img src="./cartas/viuva_negra.png"width=220px alt="">
+        <img src="./cartas/wolverine.png" width=220px alt="">
+        <img src="./cartas/thor.png" width=220px alt="">
+        `
+
+
+        if (empate) {
+            var sorteio1 = parseInt(Math.random() * 10)
+             var sorteio2 = parseInt(Math.random() * 10)
+        } else {
+
+        }
+
+        for (index = 0; index < baralho.length; index++) {
+            var mostrar = baralho.forca[index];
+
+            div_mensagem2.innerHTML += `<br>
+                Jogador 1:${jogador}<br>
+                Aversario:${adversario}<br>`
+
+            jogador++
+
+            for (let index = 0; index < array.length; index++) {
+                var mostrar1 = baralho.resistencia[index];
+
+                div_mostrar2.innerHTML = `${mostrar1}`
+
+            }
+
+        }
+
+    }
+</script>
